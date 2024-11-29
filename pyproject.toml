@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "2022"
+version = "0.1.0"
+description = ""
+authors = ["Okan Celik <okan@celik.tech>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+
+[tool.poetry.group.dev.dependencies]
+black = "24.10.0"
+isort = "5.13.2"
+pylint = "3.3.1"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--pylint ./2020/ ./ --pylint-jobs=4"
+
+[tool.pylint.message_control]
+disable="line-too-long,duplicate-code"
+
+[tool.poetry.scripts]
+lint = "poetry_utils:run_lint"
+format = "poetry_utils:run_format"
+check_isort = "poetry_utils:check_isort"
+check_format = "poetry_utils:check_format"
+2022 = "poetry_utils:run_all_days(year=2022)"
+2023 = "poetry_utils:run_all_days(year=2023)"
+2024 = "poetry_utils:run_all_days(year=2024)"
+all_solutions = "poetry_utils:run_all_days"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

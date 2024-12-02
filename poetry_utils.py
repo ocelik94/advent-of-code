@@ -17,7 +17,7 @@ def exit_on_result(success: bool):
 def run_lint():
     """run linting using pylint"""
     exit_on_result(pylint.lint.Run(["./2022"]) == pylint.ExitCode.OK)
-    # exit_on_result(pylint.lint.Run(["./2022", "./2023"]) == pylint.ExitCode.OK)
+    exit_on_result(pylint.lint.Run(["./2024"]) == pylint.ExitCode.OK)
 
 
 def run_black(check_only: bool = True):
@@ -60,10 +60,10 @@ def run_2022():
     run_all_days(year="2022")
 
 
-# def run_2023():
-#     """runs all 2023 solutions"""
-#     print("Running 2023 solutions\n")
-#     run_all_days(year="2023")
+def run_2024():
+    """runs all 2024 solutions"""
+    print("Running 2024 solutions\n")
+    run_all_days(year="2024")
 
 
 def run_all_days(year="*"):

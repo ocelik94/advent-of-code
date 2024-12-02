@@ -41,7 +41,7 @@ poetry run lint                                     # Runs: pylint
 poetry run format                                   # Runs: isort & Black formatting on files
 poetry run check_format                             # Checks: Black formatting
 poetry run check_isort                              # Checks: isort formatter on files
-poetry run python ./YYYY/day_XX/day_XX_solution.py  # Runs: solution for given year/day
+poetry run python ./YYYY/day_XX/solution_XX.py  # Runs: solution for given year/day
 poetry run YYYY                                     # Runs: all solutions for given year/day
 poetry run all_solutions                            # Runs: all year(s) code solutions
 ```
@@ -50,7 +50,7 @@ poetry run all_solutions                            # Runs: all year(s) code sol
 This repository has the following structure:
 `root/year/day_{x}/`
 
-Where each day contains an `input.txt` and a `day_xx_solution.py`.
+Where each day contains an empty `input.txt` and a `solution_XX.py`.
 
 When executed, each solution script prints the answer (and time taken) to each challenge part.
 

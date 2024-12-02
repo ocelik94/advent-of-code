@@ -2,7 +2,9 @@
 
 from pathlib import Path
 
-with open(Path(__file__).parent.resolve() / "input.txt", encoding="UTF-8") as input_file:
+with open(
+    Path(__file__).parent.resolve() / "input.txt", encoding="UTF-8"
+) as input_file:
     rows = [list(map(int, line.split())) for line in input_file]
 
 
@@ -18,8 +20,10 @@ def has_valid_differences(row):
 
 def is_valid_after_removal(row):
     for i in range(len(row)):
-        modified_row = row[:i] + row[i + 1:]
-        if check_either_increasing_or_decreasing(modified_row) and has_valid_differences(modified_row):
+        modified_row = row[:i] + row[i + 1 :]
+        if check_either_increasing_or_decreasing(
+            modified_row
+        ) and has_valid_differences(modified_row):
             return True
     return False
 

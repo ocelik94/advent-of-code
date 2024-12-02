@@ -1,7 +1,7 @@
 """Solution to Day 01 of Advent of Code 2024"""
 
-from pathlib import Path
 from collections import Counter
+from pathlib import Path
 
 with open(Path(__file__).parent.resolve() / "input.txt", encoding="UTF-8") as input_file:
     data = [list(map(int, line.split())) for line in input_file]

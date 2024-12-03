@@ -5,7 +5,7 @@ Solutions to the [Advent of Code](https://adventofcode.com/) challenges.
 
 Puzzle descriptions have not been shared in this repo. This is [per request](https://www.reddit.com/r/adventofcode/comments/k99rod/sharing_input_data_were_we_requested_not_to/) from [the AoC creator](https://github.com/topaz) and many others over countless threads [here](https://www.reddit.com/r/adventofcode/).
 
-All problems can be found fully described [here](https://adventofcode.com/2020) as well as [previous years](https://adventofcode.com/2020/events).
+All problems can be found fully described [here](https://adventofcode.com/2024) as well as [previous years](https://adventofcode.com/2024/events).
 
 These solutions are not designed to be the fastest computationally. They are simply the first ones I thought of.
 
@@ -19,10 +19,7 @@ These solutions use [Poetry](https://poetry.eustace.io/) for packaging and depen
 poetry install --no-dev
 ```
 
-- `numpy`
-- `sympy`
-
-These solutions require versions of `Python >= 3.8` and `poetry >= 1.2`
+These solutions require versions of `Python >= 3.13` and `poetry >= 1.8`
 
 ### Development dependencies
 
@@ -41,26 +38,14 @@ poetry run lint                                     # Runs: pylint
 poetry run format                                   # Runs: isort & Black formatting on files
 poetry run check_format                             # Checks: Black formatting
 poetry run check_isort                              # Checks: isort formatter on files
-poetry run python ./YYYY/day_XX/solution_XX.py  # Runs: solution for given year/day
-poetry run YYYY                                     # Runs: all solutions for given year/day
-poetry run all_solutions                            # Runs: all year(s) code solutions
+poetry run python ./YYYY/day_XX/solution_XX.py      # Runs: solution for given year/day
 ```
 
 ## Structure
 This repository has the following structure:
-`root/year/day_{x}/`
+`/YYYY/day_{x}/`
 
 Where each day contains an empty `input.txt` and a `solution_XX.py`.
-
-When executed, each solution script prints the answer (and time taken) to each challenge part.
-
-### Note
-
-In order for `poetry run all_solutions` function to work properly the following variables must be preset:
-* `PART_1_ANS`, `PART_2_ANS`
-* `PART_1_TIME_MS`, `PART_2_TIME_MS`
-
-If these are not, there will be no error (failsafe) rather the day solutions will just not print
 
 ### Special Thanks
 

@@ -3,9 +3,7 @@
 from collections import Counter
 from pathlib import Path
 
-with open(
-    Path(__file__).parent.resolve() / "input.txt", encoding="UTF-8"
-) as input_file:
+with open(Path(__file__).parent.resolve() / "input.txt", encoding="UTF-8") as input_file:
     data = [list(map(int, line.split())) for line in input_file]
     columns = list(zip(*data))
     sorted_columns = [sorted(list(col)) for col in columns]

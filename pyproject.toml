@@ -18,7 +18,7 @@ minversion = "6.0"
 addopts = "--pylint ./2022/ ./ --pylint-jobs=4"
 
 [tool.pylint.message_control]
-disable="line-too-long,duplicate-code"
+disable = "line-too-long,duplicate-code"
 
 [tool.poetry.scripts]
 lint = "poetry_utils:run_lint"
@@ -26,9 +26,30 @@ format = "poetry_utils:run_format"
 check_isort = "poetry_utils:check_isort"
 check_format = "poetry_utils:check_format"
 
+[tool.black]
+line-length = 120
+target-version = ["py313"]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | venv
+    | env
+    | _build
+    | build
+    | dist
+)/
+'''
+
 [tool.isort]
 profile = "black"
 multi_line_output = 3
+line_length = 120
+skip_gitignore = true
 
 [build-system]
 requires = ["poetry-core"]

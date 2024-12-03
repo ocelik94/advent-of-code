@@ -3,9 +3,7 @@
 import re
 from pathlib import Path
 
-with open(
-    Path(__file__).parent.resolve() / "input.txt", encoding="UTF-8"
-) as input_file:
+with open(Path(__file__).parent.resolve() / "input.txt", encoding="UTF-8") as input_file:
     text = input_file.read()
 
 pattern = r"mul\(\d+,\d+\)"

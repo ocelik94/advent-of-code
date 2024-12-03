@@ -15,7 +15,7 @@ pylint = "3.3.1"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "--pylint ./2020/ ./ --pylint-jobs=4"
+addopts = "--pylint ./2022/ ./ --pylint-jobs=4"
 
 [tool.pylint.message_control]
 disable="line-too-long,duplicate-code"
@@ -25,10 +25,6 @@ lint = "poetry_utils:run_lint"
 format = "poetry_utils:run_format"
 check_isort = "poetry_utils:check_isort"
 check_format = "poetry_utils:check_format"
-2022 = "poetry_utils:run_all_days(year=2022)"
-2023 = "poetry_utils:run_all_days(year=2023)"
-2024 = "poetry_utils:run_all_days(year=2024)"
-all_solutions = "poetry_utils:run_all_days"
 
 [tool.isort]
 profile = "black"

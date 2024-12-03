@@ -52,37 +52,3 @@ def run_format():
     run_isort(check_only=False)
     print("Running Black\n")
     exit_on_result(run_black(check_only=False).returncode == 0)
-
-
-def run_2022():
-    """runs all 2022 solutions"""
-    print("Running 2022 solutions\n")
-    run_all_days(year="2022")
-
-
-def run_2024():
-    """runs all 2024 solutions"""
-    print("Running 2024 solutions\n")
-    run_all_days(year="2024")
-
-
-def run_all_days(year="*"):
-    """Runner to run all day solutions"""
-    # year, day dir structure
-    print("Note: Run each solution separately for more detailed print statements")
-    solution_files = glob(f"./{year}/*/*solution*.py")
-    for solution in sorted(solution_files):
-        if "day_xx" in solution:
-            continue
-        print(f"{solution}\n")
-        mod_spec = importlib.util.spec_from_file_location("sol", solution)
-        module = importlib.util.module_from_spec(mod_spec)
-        mod_spec.loader.exec_module(module)
-        try:
-            print(f"Part 1:\n{module.PART_1_ANS}\n")
-            print(f"Part 2:\n{module.PART_2_ANS}\n")
-            print(
-                f"Timed Results:\nPart 1: {module.PART_1_TIME_MS:.3f} ms\nPart 2: {module.PART_2_TIME_MS:.3f} ms\n"
-            )
-        except AttributeError:
-            print("One of the required variable names is not preset")

@@ -29,7 +29,7 @@ if __name__ == "__main__":
         elif match == "do()":
             skip = False
 
-        if skip == False and match != "do()":
+        if skip is False and match != "do()":
             numbers = match[4:-1].split(",")
             n1, n2 = map(int, numbers)
             result += n1 * n2

@@ -47,6 +47,9 @@ This repository has the following structure:
 
 Where each day contains an empty `input.txt` and a `solution_XX.py`.
 
+### Notes
+The Inputs are encryped with `git-encrypt`.
+
 ### Special Thanks
 
 - Basically a fork of [jordywilliams](https://github.com/jordyjwilliams/advent_of_code) advent of code repository

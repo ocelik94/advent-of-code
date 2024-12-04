@@ -12,7 +12,6 @@ def exit_on_result(success: bool):
 
 
 def run_lint():
-    exit_on_result(pylint.lint.Run(["./2022"]) == pylint.ExitCode.OK)
     exit_on_result(pylint.lint.Run(["./2024"]) == pylint.ExitCode.OK)
 
 

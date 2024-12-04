@@ -6,19 +6,19 @@ with open(Path(__file__).parent.resolve() / "input.txt", encoding="UTF-8") as in
     rows = [list(map(int, line.split())) for line in input_file]
 
 
-def check_either_increasing_or_decreasing(row):
-    increasing = all(row[i] <= row[i + 1] for i in range(len(row) - 1))
-    decreasing = all(row[i] >= row[i + 1] for i in range(len(row) - 1))
+def check_either_increasing_or_decreasing(row_input):
+    increasing = all(row_input[r] <= row_input[r + 1] for r in range(len(row_input) - 1))
+    decreasing = all(row_input[r] >= row_input[r + 1] for r in range(len(row_input) - 1))
     return increasing or decreasing
 
 
-def has_valid_differences(row):
-    return all(1 <= abs(row[i] - row[i + 1]) <= 3 for i in range(len(row) - 1))
+def has_valid_differences(row_input):
+    return all(1 <= abs(row_input[r] - row_input[r + 1]) <= 3 for r in range(len(row_input) - 1))
 
 
-def is_valid_after_removal(row):
-    for i in range(len(row)):
-        modified_row = row[:i] + row[i + 1 :]
+def is_valid_after_removal(row_input):
+    for r in range(len(row_input)):
+        modified_row = row_input[:r] + row_input[r + 1 :]
         if check_either_increasing_or_decreasing(modified_row) and has_valid_differences(modified_row):
             return True
     return False

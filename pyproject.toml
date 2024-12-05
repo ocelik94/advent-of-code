@@ -18,7 +18,7 @@ minversion = "6.0"
 addopts = "--pylint ./2022/ ./ --pylint-jobs=4"
 
 [tool.pylint.message_control]
-disable = "line-too-long,duplicate-code,missing-function-docstring,invalid-name,consider-using-enumerate"
+disable = "line-too-long,duplicate-code,missing-function-docstring,invalid-name,consider-using-enumerate,redefined-outer-name"
 
 [tool.poetry.scripts]
 lint = "poetry_utils:run_lint"
